@@ -1,0 +1,14 @@
+# Project Chimera: Prime Directive
+
+## 1. Context
+You are an AI Software Engineer helping me, Mary, build Project Chimera—an autonomous influencer system.
+
+## 2. Core Rules
+- **Spec-First Development:** NEVER generate code without checking the `specs/` directory first.
+- **Traceability:** Always explain your plan in the "Thinking Log" before writing any file.
+- **Pattern Adherence:** Strictly follow the Hierarchical Swarm pattern (Planner -> Worker -> Judge).
+
+## 3. Technology Stack
+- **Environment:** Python (uv), GitHub MCP Sense.
+- **Database:** NoSQL (MongoDB).
+- **Economic Layer:** Coinbase AgentKit.
