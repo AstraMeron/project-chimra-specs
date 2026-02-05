@@ -1,0 +1,11 @@
+review:
+  name: AI Governance Review
+  description: |
+    Automated AI review rules for pull requests and skill changes.
+  checks:
+    - name: contract_presence
+      description: Ensure each skill folder contains a README with I/O contract.
+    - name: safety_gate
+      description: Ensure safety checks exist and tests reference the safety contract.
+    - name: spec_links
+      description: Ensure specs/openclaw_integration.md exists for broadcasting plan.
