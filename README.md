@@ -1,31 +1,39 @@
-# Project Chimera: The Orchestrator's Factory
+# Project Chimera: A Sovereign Agent Node
 
-## Status
-- **TDD Baseline:** PASSING
-- **CI/CD:** Active (GitHub Actions)
+### "The Evolution from SaaS to Service-as-Software"
 
-## Governance Logic (Summary)
-- **$10 Safety Limit:** Any candidate content that triggers a financial action with an amount greater than $10 is blocked from automatic execution and requires explicit human approval.
-- **HITL Confidence Thresholds:** Judge enforces three tiers based on confidence score (0-100):
-	- >= 95% — Autonomous (auto-execute for non-financial content)
-	- 85%–94.99% — Assisted Review (queue for fast human check)
-	- < 85% — Manual Approval required
+Project Chimera is an exploration into the next frontier of the agentic web. We are witnessing a fundamental paradigm shift: moving from **SaaS (Software as a Service)**—where humans use tools to work—to **Service *as* Software**, where autonomous agents *are* the workers.
 
-## Agent Capabilities
-- **Judge:** Evaluates candidate artifacts against the SOUL DNA and governance rules, returns approval, confidence, reason, and actions.
-- **Trend Fetcher:** `skills.skill_fetch_trends` — returns platform-specific trending keywords.
-- **Script Generator:** `skills.skill_generate_script` — creates short (30-second) video scripts from keywords.
-- **Safety Gate:** `skills.skill_check_safety` — computes a Safety Score (0-100) for generated content.
+Chimera is a **Sovereign Agent Node**. It is not just a bot; it is a digital entity with its own identity, a governing constitution, and the ability to engage in independent economic activity. It is designed to act as an **Agent Influencer**—proactively identifying trends and managing its own lifecycle while remaining strictly bound by human intent.
 
-## Quick Start
-1. Create and activate your virtual environment and install development dependencies.
-2. Ensure the project root is on `PYTHONPATH` and run tests with `uv`:
+---
 
-```powershell
-$env:PYTHONPATH = '.'
-uv run pytest
-```
+## 🏗️ The Architectural Pillars
 
-## Notes
-- All agent interfaces and enforcement rules are defined in `specs/functional.md` and `specs/technical.md`.
-- See `CLAUDE.md` for the Prime Directive and development constraints.
+### 1. Spec-Driven Development (SDD)
+In the Chimera ecosystem, the **Specification is the Law**. We utilize **Spec-Driven Development** to eliminate the "black box" nature of AI. By treating our `specs/` directory as the project’s **Source of Truth**, we ensure that every action taken by the agent is a direct reflection of documented human requirements.
+
+### 2. The Hierarchical Swarm
+To ensure reliability and prevent "AI confusion," Chimera is architected as a **Hierarchical Swarm**. This modular approach divides the agent's brain into specialized roles:
+* **The Planner:** Responsible for high-level strategy and mission management.
+* **The Workers:** Specialized "Skills" (Fetchers, Creators) that handle execution.
+* **The Judge:** An internal auditor that evaluates all output against our safety standards.
+
+### 3. Economic Sovereignty (Coinbase AgentKit)
+Powered by **Coinbase AgentKit**, Chimera possesses true **Economic Agency**. It can securely manage its own wallet, interact with blockchain networks, and execute transactions. This allows the node to be a participant in the global economy—able to manage its own resources or "hire" other services autonomously.
+
+### 4. Semantic Interoperability (OpenClaw)
+Chimera is built for a connected future. Using **JSON-LD (Linked Data)** and **MCP (Model Context Protocol)**, our node ensures its data is self-describing. It communicates using a universal dictionary, making it "OpenClaw-ready" and capable of seamless interaction with the broader Agent Social Network.
+
+---
+
+## 🛡️ Governance & Safety
+Safety is an architectural requirement, not an afterthought.
+* **The Prime Directive:** A constitutional layer that mandates the AI must validate its logic against the project blueprints before execution.
+* **3-Tier HITL (Human-in-the-Loop):** A mathematical threshold for autonomy that defines when an agent can act alone and when it must stop to ask for human permission.
+* **Immutable Audit Trail:** Every decision and "thought" is recorded in a durable database, ensuring 100% observability and accountability.
+
+---
+
+## 🚀 The Vision
+Project Chimera demonstrates that we can give agents economic power without surrendering control. By bridging the execution capabilities of the blockchain with a rigorous "Spec-First" engineering factory, we have created a node that is **Safe by Design** and **Sovereign by Nature**.
