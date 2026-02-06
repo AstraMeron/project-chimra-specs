@@ -37,3 +37,38 @@ Safety is an architectural requirement, not an afterthought.
 
 ## 🚀 The Vision
 Project Chimera demonstrates that we can give agents economic power without surrendering control. By bridging the execution capabilities of the blockchain with a rigorous "Spec-First" engineering factory, we have created a node that is **Safe by Design** and **Sovereign by Nature**.
+
+---
+
+## Branching Strategy
+We follow a conservative Git branching model that emphasizes traceability and safe releases:
+
+- `main`: Always deployable; CI runs the full TDD suite and security scans on merge.
+- `develop`: Integration branch for features; short-lived feature branches merge here for cross-feature testing.
+- `feature/*`: Each feature or experiment has a dedicated branch named `feature/<ticket>`.
+- `hotfix/*`: Critical fixes to `main` are made in `hotfix/<id>` and merged back to `develop`.
+
+Pull requests must include a reference to the relevant spec in `specs/` and pass automated tests and linters before merge.
+
+## Security Formality
+Security is treated as code and reviewed as part of every change. Key practices:
+
+- **Least Privilege:** Agents, services, and database roles use minimal privileges required to operate.
+- **Human Approval for Financial Actions:** Following our 3-Tier safety logic and the Coinbase AgentKit integration, any automated financial action above the $10 threshold requires an explicit human Approver signature recorded in the audit trail.
+- **MFA & RBAC for Approvers:** Approver identities are protected by org SSO and multi-factor authentication; Approver actions are logged with cryptographic timestamps where possible.
+- **Secrets & Key Management:** Wallet keys and API secrets are stored in vaults (env + secret manager) and never checked into source control.
+- **Security CI:** Automated dependency scanning, static analysis, and policy checks run in CI on all pull requests.
+
+## Workflow & Hygiene
+While Project Chimera is currently in a **Sovereign Bootstrap** phase on `main` (rapid iteration and spec-driven experimentation), the system is architected to transition to a **Protected Main** deployment model:
+
+- During the bootstrap phase we prioritize rapid spec-driven experiments on short-lived `feature/*` branches merged via PR.
+- Before transitioning to Protected Main, all teams must ensure: PRs reference `specs/`, tests pass (`uv run pytest`), security scans succeed, and an ADR exists for schema or data-model changes.
+- When Protected Main is enforced, direct pushes will be blocked, and merges to `main` will require passing CI, at least one code review, and approvals for any policy-affected changes (e.g., financial flows).
+
+Hygiene checklist for contributors:
+
+- Keep changes small and spec-referenced.
+- Run local TDD suite: `$env:PYTHONPATH = '.'; uv run pytest`
+- Add ADRs for design/data-model decisions; update `specs/` where behavior changes.
+
