@@ -1,7 +1,7 @@
 [project]
 name = "project-chimra-specs"
 version = "0.1.0"
-description = "Add your description here"
+description = "Project Chimera: A Sovereign Agent Node with Governed Agency"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
@@ -10,3 +10,7 @@ dependencies = []
 dev = [
     "pytest>=9.0.2",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
